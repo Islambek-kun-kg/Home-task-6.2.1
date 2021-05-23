@@ -22,9 +22,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btn_submit.setOnClickListener {
-            if (isValidUrl(edt_txt.text.toString())) {
-                images.add(edt_txt.text.toString())
-                loadImage(edt_txt.text.toString(), img_view)
+            val txt = edt_txt.text.toString()
+            if (isValidUrl(txt)) {
+                images.add(txt)
+                loadImage(txt, img_view)
             } else {
                 showToast("Error")
             }
